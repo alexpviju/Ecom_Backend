@@ -1,0 +1,1624 @@
+{
+	"info": {
+		"_postman_id": "6f8df4da-354d-48e3-931d-a2df6e227db1",
+		"name": "Ecompostman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46225165",
+		"_collection_link": "https://alex-9460575.postman.co/workspace/Ecom~b263a938-5f0b-4fb4-9080-11d7eeade3a5/collection/46225165-6f8df4da-354d-48e3-931d-a2df6e227db1?action=share&source=collection_link&creator=46225165"
+	},
+	"item": [
+		{
+			"name": "SIGNUP",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"al1@gmail.com\",\r\n    \"phn_num\":\"9786541239\",\r\n    \"password\":\"1234\",\r\n    \"confirm_password\":\"1234\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/signup/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"al1@gmail.com\",\r\n    \"password\":\"1234\"\r\n  \r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forgot password (sends OTP)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"alexpviju26@gmail.com\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/forgot-password/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"forgot-password",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OTP verification",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"alexpviju26@gmail.com\",\r\n    \"otp\": \"853754\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/verify-otp/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"verify-otp",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset password using OTP",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"alexpviju26@gmail.com\",\r\n    \"otp\": \"688168\",\r\n    \"new_password\":\"4321\",\r\n    \"confirm_password\":\"4321\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/reset-password/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"reset-password",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update password",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NjQ3ODM5LCJpYXQiOjE3NTc2NDc1MzksImp0aSI6ImJjZWMwNjZhYjExOTQ5YTg5OWM0NWI5MGRkMzk1N2I4IiwidXNlcl9pZCI6IjEifQ.FP0WFnZOD3jw6NC338BdRrrECfUBhvinu_k-9cloclw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"old_password\": \"4321\",\r\n    \"new_password\":\"1234\",\r\n    \"confirm_password\":\"1234\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/change-password/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"change-password",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "category create",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "al2@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NjQ3ODM5LCJpYXQiOjE3NTc2NDc1MzksImp0aSI6ImJjZWMwNjZhYjExOTQ5YTg5OWM0NWI5MGRkMzk1N2I4IiwidXNlcl9pZCI6IjEifQ.FP0WFnZOD3jw6NC338BdRrrECfUBhvinu_k-9cloclw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "watch",
+							"type": "text"
+						},
+						{
+							"key": "Description",
+							"value": "Good one",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/viju1/Downloads/1093.gif"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/categories/create/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"categories",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "catogory list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NjQ3ODM5LCJpYXQiOjE3NTc2NDc1MzksImp0aSI6ImJjZWMwNjZhYjExOTQ5YTg5OWM0NWI5MGRkMzk1N2I4IiwidXNlcl9pZCI6IjEifQ.FP0WFnZOD3jw6NC338BdRrrECfUBhvinu_k-9cloclw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/categories/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"categories",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Category Update ",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "al2@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NjQ3ODM5LCJpYXQiOjE3NTc2NDc1MzksImp0aSI6ImJjZWMwNjZhYjExOTQ5YTg5OWM0NWI5MGRkMzk1N2I4IiwidXNlcl9pZCI6IjEifQ.FP0WFnZOD3jw6NC338BdRrrECfUBhvinu_k-9cloclw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "watch",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Good one",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/viju1/Pictures/Screenshots/create doctor.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/categories/2/update/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"categories",
+						"2",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Category Deleted",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "al2@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NjQ3ODM5LCJpYXQiOjE3NTc2NDc1MzksImp0aSI6ImJjZWMwNjZhYjExOTQ5YTg5OWM0NWI5MGRkMzk1N2I4IiwidXNlcl9pZCI6IjEifQ.FP0WFnZOD3jw6NC338BdRrrECfUBhvinu_k-9cloclw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "phone",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "Good one",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/viju1/Pictures/Screenshots/create doctor.png",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/categories/5/delete/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"categories",
+						"5",
+						"delete",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product creation",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "al2@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NjQ3ODM5LCJpYXQiOjE3NTc2NDc1MzksImp0aSI6ImJjZWMwNjZhYjExOTQ5YTg5OWM0NWI5MGRkMzk1N2I4IiwidXNlcl9pZCI6IjEifQ.FP0WFnZOD3jw6NC338BdRrrECfUBhvinu_k-9cloclw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "watch",
+							"type": "text"
+						},
+						{
+							"key": "Description",
+							"value": "Oled",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/viju1/Downloads/1093.gif"
+						},
+						{
+							"key": "category",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "base_price",
+							"value": "600",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/products/create/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"products",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NjQ3ODM5LCJpYXQiOjE3NTc2NDc1MzksImp0aSI6ImJjZWMwNjZhYjExOTQ5YTg5OWM0NWI5MGRkMzk1N2I4IiwidXNlcl9pZCI6IjEifQ.FP0WFnZOD3jw6NC338BdRrrECfUBhvinu_k-9cloclw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "watch",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "Description",
+							"value": "Good one",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/viju1/Downloads/1093.gif",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "2",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "base_price",
+							"value": "499",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/products/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product update",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "al2@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NjQ3ODM5LCJpYXQiOjE3NTc2NDc1MzksImp0aSI6ImJjZWMwNjZhYjExOTQ5YTg5OWM0NWI5MGRkMzk1N2I4IiwidXNlcl9pZCI6IjEifQ.FP0WFnZOD3jw6NC338BdRrrECfUBhvinu_k-9cloclw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "samsung",
+							"type": "text"
+						},
+						{
+							"key": "Description",
+							"value": "Good one",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/viju1/Downloads/1093.gif"
+						},
+						{
+							"key": "category",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "base_price",
+							"value": "499",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/products/1/update/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"products",
+						"1",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product Deletion",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "al2@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NjQ3ODM5LCJpYXQiOjE3NTc2NDc1MzksImp0aSI6ImJjZWMwNjZhYjExOTQ5YTg5OWM0NWI5MGRkMzk1N2I4IiwidXNlcl9pZCI6IjEifQ.FP0WFnZOD3jw6NC338BdRrrECfUBhvinu_k-9cloclw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "samsung",
+							"type": "text"
+						},
+						{
+							"key": "Description",
+							"value": "Good one",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/viju1/Downloads/1093.gif"
+						},
+						{
+							"key": "category",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "base_price",
+							"value": "499",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/products/2/delete/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"products",
+						"2",
+						"delete",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "varients creation",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "al2@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NjQ3ODM5LCJpYXQiOjE3NTc2NDc1MzksImp0aSI6ImJjZWMwNjZhYjExOTQ5YTg5OWM0NWI5MGRkMzk1N2I4IiwidXNlcl9pZCI6IjEifQ.FP0WFnZOD3jw6NC338BdRrrECfUBhvinu_k-9cloclw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "samsung",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "Description",
+							"value": "Good one",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/viju1/Downloads/1093.gif",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "2",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "base_price",
+							"value": "499",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "color",
+							"value": "black",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "849",
+							"type": "text"
+						},
+						{
+							"key": "product",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/variants/create/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"variants",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getting varients",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NjQ3ODM5LCJpYXQiOjE3NTc2NDc1MzksImp0aSI6ImJjZWMwNjZhYjExOTQ5YTg5OWM0NWI5MGRkMzk1N2I4IiwidXNlcl9pZCI6IjEifQ.FP0WFnZOD3jw6NC338BdRrrECfUBhvinu_k-9cloclw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "samsung",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "Description",
+							"value": "Good one",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/viju1/Downloads/1093.gif",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "2",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "base_price",
+							"value": "499",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "color",
+							"value": "black",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "price",
+							"value": "849",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "product",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/variants/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"variants",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Varient update",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "al2@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NjQ3ODM5LCJpYXQiOjE3NTc2NDc1MzksImp0aSI6ImJjZWMwNjZhYjExOTQ5YTg5OWM0NWI5MGRkMzk1N2I4IiwidXNlcl9pZCI6IjEifQ.FP0WFnZOD3jw6NC338BdRrrECfUBhvinu_k-9cloclw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "samsung",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "Description",
+							"value": "Good one",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/viju1/Downloads/1093.gif",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "2",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "base_price",
+							"value": "499",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "color",
+							"value": "black",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "999",
+							"type": "text"
+						},
+						{
+							"key": "product",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/variants/1/update/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"variants",
+						"1",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vrient delete",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "al2@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NjQ3ODM5LCJpYXQiOjE3NTc2NDc1MzksImp0aSI6ImJjZWMwNjZhYjExOTQ5YTg5OWM0NWI5MGRkMzk1N2I4IiwidXNlcl9pZCI6IjEifQ.FP0WFnZOD3jw6NC338BdRrrECfUBhvinu_k-9cloclw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "samsung",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "Description",
+							"value": "Good one",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/viju1/Downloads/1093.gif",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "2",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "base_price",
+							"value": "499",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "color",
+							"value": "black",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "price",
+							"value": "999",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "product",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/variants/1/delete/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"variants",
+						"1",
+						"delete",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding to wish list",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "al3@gmail.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NzM1NDg3LCJpYXQiOjE3NTc3MzUxODcsImp0aSI6ImRlYjFmZDk2YWU1MDQzNDc5ZjhlYzg0ZDZjNDhlMjQ4IiwidXNlcl9pZCI6IjMifQ.niqbbIRlU5tEorY8VSqY-tE-iJZ_J25x_PvhcGZy0q8",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"product_id\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/wishlist/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"wishlist",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getting Wishlist",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "al3@gmail.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NzM1NDg3LCJpYXQiOjE3NTc3MzUxODcsImp0aSI6ImRlYjFmZDk2YWU1MDQzNDc5ZjhlYzg0ZDZjNDhlMjQ4IiwidXNlcl9pZCI6IjMifQ.niqbbIRlU5tEorY8VSqY-tE-iJZ_J25x_PvhcGZy0q8",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/wishlist/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"wishlist",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove from wish list by Id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "al3@gmail.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NzM1NDg3LCJpYXQiOjE3NTc3MzUxODcsImp0aSI6ImRlYjFmZDk2YWU1MDQzNDc5ZjhlYzg0ZDZjNDhlMjQ4IiwidXNlcl9pZCI6IjMifQ.niqbbIRlU5tEorY8VSqY-tE-iJZ_J25x_PvhcGZy0q8",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/wishlist/3/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"wishlist",
+						"3",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adding to cart",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "al3@gmail.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NzM1NDg3LCJpYXQiOjE3NTc3MzUxODcsImp0aSI6ImRlYjFmZDk2YWU1MDQzNDc5ZjhlYzg0ZDZjNDhlMjQ4IiwidXNlcl9pZCI6IjMifQ.niqbbIRlU5tEorY8VSqY-tE-iJZ_J25x_PvhcGZy0q8",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product\":4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/buying/cart/items/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"buying",
+						"cart",
+						"items",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getting Cart",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "al3@gmail.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NzQ5Mzc3LCJpYXQiOjE3NTc3NDkwNzcsImp0aSI6IjhmZjE5NDZmYTRiMjRjYzc4MjNhYmIzZTZiOWM5YzMyIiwidXNlcl9pZCI6IjMifQ.9U72fRIZhG46XZn1n3KBAfMVpRX_tQ30fuxCTnDdWp0",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/buying/cart/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"buying",
+						"cart",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Item from Cart",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "al3@gmail.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NzQ5Mzc3LCJpYXQiOjE3NTc3NDkwNzcsImp0aSI6IjhmZjE5NDZmYTRiMjRjYzc4MjNhYmIzZTZiOWM5YzMyIiwidXNlcl9pZCI6IjMifQ.9U72fRIZhG46XZn1n3KBAfMVpRX_tQ30fuxCTnDdWp0",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/buying/cart/items/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"buying",
+						"cart",
+						"items",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order Using Razopay",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "al3@gmail.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NzQ5Mzc3LCJpYXQiOjE3NTc3NDkwNzcsImp0aSI6IjhmZjE5NDZmYTRiMjRjYzc4MjNhYmIzZTZiOWM5YzMyIiwidXNlcl9pZCI6IjMifQ.9U72fRIZhG46XZn1n3KBAfMVpRX_tQ30fuxCTnDdWp0",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/buying/order/create/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"buying",
+						"order",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Cart quantity",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "al3@gmail.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU3NzQ5Mzc3LCJpYXQiOjE3NTc3NDkwNzcsImp0aSI6IjhmZjE5NDZmYTRiMjRjYzc4MjNhYmIzZTZiOWM5YzMyIiwidXNlcl9pZCI6IjMifQ.9U72fRIZhG46XZn1n3KBAfMVpRX_tQ30fuxCTnDdWp0",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"quantity\": 1}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/buying/cart/items/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"buying",
+						"cart",
+						"items",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
